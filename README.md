@@ -1,4 +1,4 @@
-# todoTestNuxt
+# todoNuxt
 
 ## Build Setup
 

@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'todoTestNuxt',
+    title: 'todoNuxt',
     htmlAttrs: {
       lang: 'en'
     },
@@ -32,12 +32,11 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // https://go.nuxtjs.dev/chakra
+    '@chakra-ui/nuxt',
+    // https://go.nuxtjs.dev/emotion
+    '@nuxtjs/emotion',
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
