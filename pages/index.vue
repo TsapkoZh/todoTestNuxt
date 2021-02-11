@@ -1,73 +1,54 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        todoTestNuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="body">
+    <h1 class="title">todos</h1>
+      <div class="todoList">
+        <Header />
+        <TodoList 
+
+        />
+        <Footer />
       </div>
-    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapGetters, mapState } from 'vuex';
+
+export default {
+  data() {
+    return {
+      todo: "",
+    };
+  },
+
+  computed: {
+    ...mapState(["todos", "editedTodo"]),
+    ...mapGetters('todos', ["filteredTodos"]),
+  },
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style scoped>
+  .todoList {
+	width: 32vw;
+	margin: 4vw auto;
+	background-color: white;
+	background: white;
+	box-shadow:
+		0 .1vw .1vw rgba(0,0,0,0.15),
+		0 .55vw 0 -.22vw rgb(255, 255, 255),
+		0 .55vw .1vw -.2vw rgba(0,0,0,0.15),
+		0 1.1vw 0 -.55vw rgb(255, 255, 255),
+		0 1.1vw .1vw -.5vw rgba(0,0,0,0.15);
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+	margin: 2vw;
+	text-align: center;
+	color: rgb(86, 129, 86);
+	font-family: arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 6vw;
+	opacity: .3;
 }
 </style>
